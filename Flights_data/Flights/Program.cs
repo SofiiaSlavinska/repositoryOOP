@@ -203,8 +203,24 @@ class Program
             try
             {
                 string jsonData = File.ReadAllText(filePath);
-                FlightData flightData = JsonConvert.DeserializeObject<FlightData>(jsonData);
-                flights = flightData.Flights;
+                FlightData flightData = JsonConvert.DeserializeObject<FlightData>(jsonData, new JsonSerializerSettings
+                {
+                    Error = delegate (object sender, Newtonsoft.Json.Serialization.ErrorEventArgs args)
+                    {
+                        args.ErrorContext.Handled = true;
+                    }
+                });
+
+                flights = flightData.Flights.Where(flight =>
+                    !string.IsNullOrEmpty(flight.DepartureTime.ToString("yyyy-MM-ddTHH:mm:ss")) &&
+                    !string.IsNullOrEmpty(flight.ArrivalTime.ToString("yyyy-MM-ddTHH:mm:ss")) &&
+                    !string.IsNullOrEmpty(flight.FlightNumber) &&
+                    !string.IsNullOrEmpty(flight.Airline) &&
+                    !string.IsNullOrEmpty(flight.Destination) &&
+                    !string.IsNullOrEmpty(flight.Status.ToString()) &&
+                    !string.IsNullOrEmpty(flight.Duration.ToString()) &&
+                    !string.IsNullOrEmpty(flight.AircraftType) &&
+                    !string.IsNullOrEmpty(flight.Terminal)).ToList();
             }
             catch (JsonReaderException ex)
             {

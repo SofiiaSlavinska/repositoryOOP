@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VStasks\\Flights\\Flights\\Flights.csproj": {}
+    "D:\\VStasks\\Flights_data\\Flights\\Flights.csproj": {}
   },
   "projects": {
-    "D:\\VStasks\\Flights\\Flights\\Flights.csproj": {
+    "D:\\VStasks\\Flights_data\\Flights\\Flights.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VStasks\\Flights\\Flights\\Flights.csproj",
+        "projectUniqueName": "D:\\VStasks\\Flights_data\\Flights\\Flights.csproj",
         "projectName": "Flights",
-        "projectPath": "D:\\VStasks\\Flights\\Flights\\Flights.csproj",
+        "projectPath": "D:\\VStasks\\Flights_data\\Flights\\Flights.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\VStasks\\Flights\\Flights\\obj\\",
+        "outputPath": "D:\\VStasks\\Flights_data\\Flights\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
